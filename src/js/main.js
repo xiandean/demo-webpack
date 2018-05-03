@@ -1,5 +1,3 @@
-import '../css/index.scss';
-
 if (process.env.NODE_ENV === 'development') {
  	require('../index.html');
 }
@@ -9,14 +7,16 @@ import preload from './module/preload.js';
 import events from './module/events.js';
 import music from './module/music.js';
 
+import '../css/index.scss';
+
 const app = {
     preload,
     music,
     events,
     share () {
         weixin.getConfig().then(() => {
-            if (this.musics.bg) {
-                document.getElementById((this.musics.bg)).play();
+            if (this.music.bg) {
+                document.getElementById((this.music.bg)).play();
             }
 
             weixin.setShare({
