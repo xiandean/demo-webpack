@@ -71,6 +71,60 @@ module.exports = merge(baseWebpackConfig, {
 		                }
 		            }
 		    	]
+		    },
+		    {
+		    	test: /\.less$/,
+		    	use: [
+		    		{
+		    			loader: 'style-loader',
+		    			options: {
+		    				sourceMap: true
+		    			}
+		    		},
+		    		{
+		    			loader: 'css-loader',
+		    			options: {
+		    				sourceMap: true
+		    			}
+		    		},
+		            {
+						loader: 'postcss-loader',
+						options: postcssOptions
+		            },
+		            {
+		                loader: 'less-loader',
+		    			options: {
+		    				sourceMap: true
+		    			}
+		            }
+		    	]
+		    },
+		    {
+		    	test: /\.styl$/,
+		    	use: [
+		    		{
+		    			loader: 'style-loader',
+		    			options: {
+		    				sourceMap: true
+		    			}
+		    		},
+		    		{
+		    			loader: 'css-loader',
+		    			options: {
+		    				sourceMap: true
+		    			}
+		    		},
+		            {
+						loader: 'postcss-loader',
+						options: postcssOptions
+		            },
+		            {
+		                loader: 'stylus-loader',
+		    			options: {
+		    				sourceMap: true
+		    			}
+		            }
+		    	]
 		    }
 		]
 	},

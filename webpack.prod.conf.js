@@ -62,6 +62,48 @@ module.exports = merge(baseWebpackConfig, {
 		                loader: 'sass-loader'
 		            }
 		    	]
+		    },
+		    {
+		    	test: /\.less$/,
+		    	use: [
+		    		{
+		    			loader: MiniCssExtractPlugin.loader
+		    		},
+		    		{
+		    			loader: 'css-loader',
+		    			options: {
+                            minimize: true
+                        }
+		    		},
+		            {
+						loader: 'postcss-loader',
+						options: postcssOptions
+		            },
+		            {
+		                loader: 'less-loader'
+		            }
+		    	]
+		    },
+		    {
+		    	test: /\.styl$/,
+		    	use: [
+		    		{
+		    			loader: MiniCssExtractPlugin.loader
+		    		},
+		    		{
+		    			loader: 'css-loader',
+		    			options: {
+                            minimize: true
+                        }
+		    		},
+		            {
+						loader: 'postcss-loader',
+						options: postcssOptions
+		            },
+		            {
+		                loader: 'stylus-loader'
+		            }
+		    	]
 		    }
 		]
 	},

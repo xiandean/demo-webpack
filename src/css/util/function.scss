@@ -1,0 +1,13 @@
+@function color($name){
+    @if not map-has-key($color, $name){
+        @warn "No color found for `#{$name}` in $social-colors map. Property omitted.";
+    }
+    @return map-get($color, $name);
+}
+
+@function fontSize($name){
+    @if not map-has-key($fontSize, $name){
+        @warn "No color found for `#{$name}` in $social-colors map. Property omitted.";
+    }
+    @return map-get($fontSize, $name);
+}

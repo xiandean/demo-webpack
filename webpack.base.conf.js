@@ -27,12 +27,22 @@ module.exports = {
 		        use: 'html-loader'
 		    },
 		    {
-		        test: /\.(png|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
+		        test: /\.(png|jpg|jpeg|gif|svg|svgz)$/,
 		        use: {
 					loader: 'url-loader',
 					options: {
-						limit: 1000,
+						limit: 5000,
 						name: 'images/[name].[ext]'
+					}
+		        }
+		    },
+		    {
+		    	test: /\.(eot|ttf|woff|woff2)$/,
+		    	use: {
+					loader: 'url-loader',
+					options: {
+						limit: 5000,
+						name: 'fonts/[name].[ext]'
 					}
 		        }
 		    }
