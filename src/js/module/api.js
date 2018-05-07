@@ -60,9 +60,9 @@ export const weixin = {
     getOpenid() {
         if (getQueryString('openid')) {
             user.openid = getQueryString('openid');
-            localStorage.setItem('wx_openid', user.openid);
-        } else if (localStorage.getItem('wx_openid')) {
-            user.openid = localStorage.getItem('wx_openid');
+            localStorage.setItem('weixin_openid', user.openid);
+        } else if (localStorage.getItem('weixin_openid')) {
+            user.openid = localStorage.getItem('weixin_openid');
         } else {
             if (getQueryString('oid')) {
                 window.location.href = 'http://interface.gd.sina.com.cn/gdif/gdwx/wxcode?oid=' + getQueryString('oid');

@@ -51,12 +51,27 @@ const app = {
 
 app.main();
 
-// async function test () {
-//     try {
-//         const result = await weixin.getConfig;
-//         console.log(result);
-//     } catch (err) {
-//         console.log(err);
-//     }
+// function timeout (ms) {
+//     return new Promise((resolve) => {
+//         setTimeout(resolve, ms);
+//     });
 // }
-// test();
+
+async function timeout (ms) {
+    await new Promise((resolve) => {
+        setTimeout(resolve, ms);
+    });
+}
+
+async function test () {
+    await timeout(3000);
+    console.log('3000');
+    await timeout(2000);
+    console.log('2000');
+    await timeout(1000);
+    console.log('1000');
+    return 'ok';
+}
+test().then((res) => {
+    console.log(res);
+});
