@@ -1,7 +1,7 @@
 // 音乐
 export default {
     // 背景音乐id (将自动播放)
-    bg: 'bgMusic',
+    // bg: 'bgMusic',
 
     // 其他音效ids
     others: [],
